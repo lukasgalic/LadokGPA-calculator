@@ -14,7 +14,7 @@ class Course:
     grade: int
 
 
-pdf_file = "records.pdf"
+pdf_file = "records3.pdf"
 reader = PdfReader(pdf_file)
 
 courses = []
