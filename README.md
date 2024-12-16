@@ -1,1 +1,3 @@
-Download Transcript of records from Ladok, name it 'Records.pdf', place it in the same folder as the script and run it.
+Download the english version of Transcript of records from Ladok 
+(Nationellt resultatintyg), do not include modules and name 
+it 'Records.pdf'. Place it in the same folder as the script and run it.
