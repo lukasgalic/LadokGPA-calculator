@@ -26,7 +26,6 @@ for page in reader.pages:
     lines = re.split(r'\b(?<!\S)(1|2)(?!\S)\b', text)
     for line in lines:
         scope_match = re.search(scope_reg, line)
-
         grade_match = re.search(grade_reg, line)
 
         if scope_match and grade_match:
@@ -39,12 +38,15 @@ for page in reader.pages:
             ))
 
 
-text = reader.pages[1].extract_text()
-
 # Total HP
-match = re.search(r'\n(\d+\.\d+)\shp\n', text)
+for page in reader.pages:
+    text = page.extract_text()
+    total_hp_match = re.search(r'\n(\d+\.\d+)\s*hp\n', text)
+    if total_hp_match:
+        total_hp = float(total_hp_match.group(1))
+        break
 
-total_hp = float(match.group().replace("hp", ""))
+total_hp = float(total_hp_match.group().replace("hp", ""))
 
 sum = 0
 scope_to_exclude = 0
